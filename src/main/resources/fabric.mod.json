@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "calculator_commands",
+  "version": "${version}",
+  "name": "calculator-commands",
+  "description": "Adds the /calculate command for quick in-game math",
+  "authors": [
+    "lGrom"
+  ],
+  "contact": {
+    "repo": "https://github.com/lGrom/calculator-commands"
+  },
+  "license": "MIT",
+  "icon": "assets/calculator_commands/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.igrom_.calculator_commands.client.Calculator_commandsClient"
+    ],
+    "main": [
+      "me.igrom_.calculator_commands.Calculator_commands"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.3",
+    "fabric": "*",
+    "minecraft": "1.20.4"
+  }
+}
