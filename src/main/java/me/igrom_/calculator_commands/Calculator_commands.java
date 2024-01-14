@@ -5,6 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.minecraft.text.Text;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
 
@@ -19,8 +21,9 @@ public class Calculator_commands implements ModInitializer {
             .then(argument("expression", StringArgumentType.greedyString())
             .executes(context -> {
                 final String expression = StringArgumentType.getString(context, "expression");
-//                final int result = kjlasdf;
-                context.getSource().sendFeedback(Text.literal(expression));
+                Expression parsedExpression = new ExpressionBuilder(expression).build();
+                final double result = parsedExpression.evaluate();
+                context.getSource().sendFeedback(Text.literal("Result: " + result));
                 return 1;
         }))));
     }
