@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "calculator_commands",
-  "version": "${version}",
+  "version": "1.0.0",
   "name": "calculator-commands",
   "description": "Adds the /calculate command for quick in-game math",
   "authors": [
